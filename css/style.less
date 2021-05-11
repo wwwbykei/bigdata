@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+@import "webfont";
+@import "button";
+@import "form";
+@import "list";
+@import "modal";
+@import "nav";
+@import "pagination";
+@import "reset";
+@import "scaffolding";
+@import "shortcut";
+@import "slick";
+@import "tab";
+@import "table";
+@import "type";
+@import "variable";
+@import "utility";
+
+/* Common */
+a[href="#container"]{.hidden}
+#container{.overh;.ptb(80px)}
+.content-wrap{.w(@content-wrap-width);.mrl(auto)}
+.contents{.fr;.w(920px)}
+.contents-header{.h(42px);.mb(24px)}
+.contents-footer{.clear;.overh;.fl;.w-full;.mt(40px);
+	a,button{
+		&:first-child{.fl}
+		&:last-child{.fr}
+	}
+}
+
+/* page */
+.page-analysis{
+	.contents{.w(861px)}
+}
+
+.page-data{
+	.content-wrap{.tc;
+		> a{.w(240px)}
+		> ul{.mt(80px);
+			> li{.fl;.w(226px);.tl;
+				&:not(:first-child){.ml(12px)}
+				&:nth-child(2n){
+					h3{.bg(#f4f4f4)}
+				}
+				h3,li{.boxsize;.p(24px);.b;.radius}
+				h3{.fs(24);.bold}
+				li{.mt(10px);.fs(16)}
+			}
+		}
+	}
+}
+
+.page-howtouse{
+	.content-wrap{
+		> div{
+			&:not(:first-child){.mt(80px);.pt(80px);.bt}
+			h3{.fs(24);.bold}
+			ol{.overh;
+				li{.fl;.w(240px);.pr(44px);.tc;
+					&:not(:last-child){.mr(10px);.bgimg('ico-howtouse-arrow.png',100%,32px)}
+					&:nth-child(-n+5){.mt(40px)}
+					&:nth-child(n+5):nth-child(-n+7){.mt(64px)}
+					p{.mt(24px);.c(#000);
+						span{.block;.mb(8px);.fs(16);.montserrat;.c(#999)}
+					}
+				}
+			}
+			i{.in-block;.w(88px);.h(88px);.b;.radius-oval}
+			&:first-child{
+				ol{
+					li{
+						&:first-child{
+							i{.bgimg('ico-menu-green.png',50%,50%)}
+						}
+						&:nth-child(2){
+							i{.bgimg('ico-calendar-green.png',50%,50%)}
+						}
+						&:nth-child(3){
+							i{.bgimg('ico-edit-green.png',50%,50%)}
+						}
+						&:nth-child(4){
+							i{.bgimg('ico-check-oval-green.png',50%,50%)}
+						}
+						&:nth-child(5){
+							i{.bgimg('ico-face-green.png',50%,50%)}
+						}
+						&:nth-child(6){
+							i{.bgimg('ico-upload-green.png',50%,50%)}
+						}
+						&:last-child{
+							i{.bgimg('ico-check.png',50%,50%)}
+						}
+					}
+				}
+			}
+			&:nth-child(2){
+				ol{
+					li{
+						&:first-child{
+							i{.bgimg('ico-menu-yellow.png',50%,50%)}
+						}
+						&:nth-child(2){
+							i{.bgimg('ico-calendar-yellow.png',50%,50%)}
+						}
+						&:nth-child(3){
+							i{.bgimg('ico-edit-yellow.png',50%,50%)}
+						}
+						&:nth-child(4){
+							i{.bgimg('ico-check-oval-yellow.png',50%,50%)}
+						}
+						&:nth-child(5){
+							i{.bgimg('ico-face-yellow.png',50%,50%)}
+						}
+						&:last-child{
+							i{.bgimg('ico-check.png',50%,50%)}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//이용안내, 교육장예약
+.classroom-guide{.mt(80px);.tc;
+	h3{.fs(24);.bold}
+	i{.in-block;.w(88px);.h(88px);.b;.radius-oval}
+	> p{.mt(12px);.fs(16);.c(#666)}
+	ul{.in-block;.mt(40px);
+		li{.in-block;.mrl(75px);.fs(16);.montserrat;.c(#000);
+			i{.mr(24px);.valign}
+			&:first-child{
+				i{.bgimg('ico-headset-gray.png',50%,50%)}
+			}
+			&:last-child{
+				i{.bgimg('ico-email-gray.png',50%,50%)}
+			}
+		}
+	}
+}
+
+.page-about{
+	.content-wrap{
+		> div{
+			&:not(:first-child){.mt(80px)}
+			&:nth-child(3),&:last-child{.pt(80px);.bt}
+			> h3{.fs(24);.bold}
+			> h3 + *{.mt(24px)}
+			&:first-child{//purpose
+				> div{.p(40px);.b;.radius}
+				dl{.dl-horiz;
+					&:first-child{
+						li{
+							&:last-child{.mt(12px)}
+						}
+					}
+					&:last-child{.mt(40px);.pt(40px);.bt;
+						li{
+							&:not(:last-child){.fl}
+							&:nth-child(2){.ml(180px)}
+							&:last-child{.fr}
+						}
+					}
+				}
+				dt{.fs(16)}
+				ul{.bu-dot}
+				li{.fs(16);.c(#666);
+					&:before{.bg(@green) !important}
+				}
+			}
+			&:nth-child(2){
+				ul{.overh;.mt(40px)}
+				li{.fl;.w(320px);.tc;
+					&:not(:first-child){.ml(110px)}
+					i{.in-block}
+					p{.mt(32px);.fs(16);.c(#666);
+						strong{.block;.mb(24px);.c(#000)}
+					}
+					&:first-child{
+						i{.w(88px);.h(88px);.bgimg('ico-presentation.png',50%,50%)}
+					}
+					&:nth-child(2){
+						i{.w(88px);.h(88px);.bgimg('ico-hub.png',50%,50%)}
+					}
+					&:last-child{
+						i{.w(96px);.h(88px);.bgimg('ico-support.png',50%,50%)}
+					}
+				}
+			}
+			&:nth-child(3){
+				> div{
+					&:last-child{.mt(64px)}
+					> h5{.fs(16);.bold}
+					> ul{.overh;.mt(16px);
+						> li{.fl;.w(540px);
+							&:last-child{.ml(100px)}
+							> p{.mtb(24px);.fs(16)}
+						}
+					}
+				}
+				.carousel{
+					> li,.slick-slide{.h(200px);.bgs(cover);.bgpos(50%,50%)}
+				}
+				.bu-dot{.bu-dot;
+					li{.fs(16);.c(#666);
+						&:not(:first-child){.mt(12px)}
+						&:before{.bg(@green) !important}
+					}
+				}
+			}
+			&:last-child{
+				> p{.mtb(24px);.fs(16);.c(#000)}
+				> div{.overh;
+					h5{.fs(16);.bold}
+					dl{.fl;.w(540px);
+						&:last-child{.ml(100px)}
+					}
+					dt{.rel;.mtb(12px,8px);.pl(20px);.fs(16);.c(#666);
+						&:before{content:'';.block;.abs;top:50%;left:0;width:8px;height:8px;.mt(-4px);.radius-oval;.bg(@green)}
+					}
+					dd{.c(#333)}
+				}
+			}
+		}
+	}
+}
+
+.page-home{
+	header{.h(500px);
+		> div{.mt(50px);.tc;
+			h1,p{.c(#fff)}
+			h1{.fs(40);.bold}
+			p{.mt(16px);.fs(16)}
+			div{.in-block;.mt(48px);
+				a{.w(160px);.mrl(8px)}
+			}
+		}
+	}
+	.content-wrap{.overh;
+		.row{.overh;
+			> div{.w(540px);
+				&:first-child{.fl}
+				&:last-child{.fr}
+				> h3{.mb(24px);.bb(#ccc);;
+					span{.in-block;.pb(4px);.bb(#000);.fs(16);.bold;.c(#000)}
+				}
+			}
+			&:last-child{.mt(80px);
+				> div{
+					&:first-child{
+						li{.overh;
+							&:not(:first-child){.mt(12px)}
+							a{.text-ellipsis;.fl;.w(450px);.c(#000)}
+							span{.fr;.c(#666)}
+						}
+					}
+					&:last-child{
+						.carousel{.pb(20px);
+							> li,.slick-slide{
+								a{.block;.h(152px);.bgs(cover);.bgpos(50%,50%);.text-hidden}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

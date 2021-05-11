@@ -1,0 +1,45 @@
+
+/* Utilities */
+.dp-table{display:table;
+	> *{display:table-cell}
+}
+
+/* Align */
+.horiz-center{.rel;.fr;left:-50%;
+	> *{.rel;.fl;left:50%}
+	.btn{.mrl(auto)}
+}
+.vert-middle{
+	&:before,> *{.in-block;.valign}
+	&:before{content:'';height:100%}
+}
+.vert-middle-abs(@height){.abs;top:50%;.mt( ( -@height / 2 ) )}
+.center-abs(@width,@height){.abs;top:50%;left:50%;width:@width;height:@height;.m( ( -@height / 2 ) 0 0 ( -@width / 2 ) )}
+.bu-dot(@color:#eee,@top:50%){
+	> li{.rel;.pl(20px);
+		&:before{content:'';.block;.abs;top:@top;left:0;width:8px;height:8px;.mt(-4px);.radius-oval;.bg(@color)}
+	}
+	.bu-dot-green{
+		&:before{.bg(@green)}
+	}
+}
+.bu-minus{
+	& > li{.rel;.pl(16px);
+		&:before{content:'-';.block;.fl;.abs;top:0;left:0;width:6px;height:6px}
+	}
+}
+.bu-decimal-dot{counter-reset:ol-counter;
+	> li{.rel;.pl(16px);
+		&:before{content:counter(ol-counter)".";counter-increment:ol-counter;.abs;top:0;left:0;.mr(8px)}
+	}
+}
+.bu-split(@height:10px,@gutter:10px,@color:@gray-400,@opacity:1){.list-horiz;
+	> *{.rel;.pr(@gutter * 2);
+		&:after{content:'';.block;.vert-middle-abs(@height);right:@gutter - 2;width:1px;height:@height;.bg(@color);.opacity(@opacity)}
+		&:last-child:after{width:0}
+	}
+}
+.box-shadow(@x:5px,@y:15px,@blur:30px,@color:rgba(0,0,0,0.1)) {
+ 	-webkit-box-shadow: @x @y @blur @color; // iOS <4.3 & Android <4.1
+    box-shadow: @x @y @blur @color
+}

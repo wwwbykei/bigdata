@@ -1,0 +1,124 @@
+
+/* List */
+.list-horiz{
+	> li{.in-block;.valign}
+}
+.dl-horiz(@dt-width:120px){.overh;
+	dt{.clear;.fl;.w(@dt-width);.mr(40px);.bold}
+	dd{.overh}
+}
+.dl-qna(@top:8px,@left:24px){
+	dt,dd{.rel;
+		&:before{.block;.abs;top:@top;left:0;
+			@media @moretablet{top:@top + 8;left:@left}
+		}
+	}
+	dt{
+		&:before{content:'Q.'}
+	}
+	dd{
+		&:before{content:'A.'}
+	}
+}
+.dl-q(@top:8px,@left:24px){
+	dt{.rel;
+		&:before{content:'Q.';.block;.abs;top:@top;left:0;
+			@media @moretablet{top:(@top + 8);left:@left}
+		}
+	}
+}
+
+//공지사항 > 목록, 마이페이지 예약관리 > 목록
+.list-board{.clear;
+	.board-header,.board-article li{/*.dp-table;.w-full;*/.overh;.ptb(16px);.tc;.c(#666)}
+	.board-header li,.board-article span,.board-article a,.board-article div{.boxsize;.block;.fl}
+	.board-header{.bt(#000)}
+	.board-article{.clear;.bt;
+		li{.bb}
+		.cell-subject{.c(#000)}
+	}
+	.cell-subject{.text-ellipsis;.mrl(20px);.tl}
+	.cell-category{.w(110px)}
+	.cell-number{.w(75px)}
+	.cell-date{.w(112px)}
+	.cell-period{.w(200px)}
+	.cell-views{.w(75px)}
+	.cell-count{.w(82px)}
+	.cell-status{.w(100px)}
+	.cell-button{.pr(20px);//.tr;
+		.btn{.fr;.mrl(2px)}
+	}
+}
+
+//공지사항 > 목록, 리포트 > 목록
+.page-info{
+	.list-board{
+		.cell-subject{.w(614px)}
+		.board-article{
+			li{
+				&.notice{
+					.cell-number{.c(@red)}
+					.cell-subject{.bold}
+				}
+			}
+		}
+	}
+}
+
+//마이페이지 > 예약 관리
+.page-mypage-reservation{
+	.list-board{
+		.cell-button{.w(320px)}
+	}
+	.board-article{
+		.cell-category,.cell-period{.c(#000)}
+		li{
+			span{.mt(6px)}
+		}
+	}
+}
+
+//마이페이지 > 데이터 반출 내역
+.page-mypage-history{
+	.cell-category{.w(190px);.pl(20px);.tl}
+	.cell-subject{.w(362px)}
+	.view-board + .list-board{
+		.board-header{.bt}
+		.cell-subject{.w(276px)}
+	}
+	.view-board + .list-board + a{.fr;.mt(40px)}
+}
+
+//공지사항 > view
+.view-board{
+	.board-header{.ptb(24px);.bt(#000);.bb;
+		li{
+			&:first-child{.text-24-bold}
+			&:last-child{.mt(16px);
+				span{.tc;
+					&:not(:first-child){.ml(16px);.pl(16px);.bl}
+				}
+			}
+		}
+	}
+	> div{.pt(24px);.bb;
+		p,img{.mb(40px)}
+		p{.lh(2)}
+	}
+	> dl{.dl-horiz;.ptb(40px);.bb;
+		a{.block;.tu;
+			&:not(:first-child){.mt(12px)}
+		}
+	}
+}
+.board-prevnext{
+	a{.text-ellipsis;.block;.rel;max-width:320px;
+		&:first-child{.pl(79px);
+			span{left:24px;.pr(12px);.br}
+		}
+		&:last-child{.pr(79px);
+			span{right:24px;.pl(12px);.bl}
+		}
+		span{.block;.abs;top:50%;.mt(-12px)}
+	}
+}

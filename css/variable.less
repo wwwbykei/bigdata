@@ -1,0 +1,104 @@
+
+/* Variables */
+@screen-sm:                  768px;
+@screen-md-min:              (@screen-sm + 1);
+@screen-md:                  1160px;
+@screen-md-max:              (@screen-md);
+@screen-lg:                  (@screen-md + 1);
+
+@mobile: ~"(max-width:@{screen-sm})";
+@tablet: ~"(min-width:@{screen-md-min}) and (max-width:@{screen-md-max})";
+@totablet: ~"(max-width:@{screen-md-max})";
+@moretablet: ~"(min-width:@{screen-md-min})";
+@desktop: ~"(min-width:@{screen-lg})";
+
+// Z-index
+@z-navbar: 1000;
+@zindex-popover:           1060;
+@zindex-tooltip:           1070;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+
+/* Layout */
+@gnb-height: 200px;
+@content-wrap-width: 1180px;
+
+/* border */
+@border-radius-base: 4px;
+@border-color-base: #eee;
+
+// Typography
+@font-family-base: 'Apple SD Gothic Neo','애플 SD 산돌고딕 Neo','Montserrat','Noto Sans KR','나눔고딕','NanumGothic','맑은 고딕','Malgun Gothic','돋움',Dotum,sans-serif; 
+@font-size-base: 14px;
+
+/* Colors */
+@blue: #4638D6;
+@yellow: #F3D351;
+@red: #FF5165;
+@red-light: #FF7686;
+@green: #20C4CB;
+
+@body-bg: #fff;
+@footer-bg: #fff;
+@text-color: #333;
+
+/* list */
+@list-row-height: 56px;
+
+/* Form */
+@line-height-base: 1.5;
+@input-height-base: 42px;
+@input-height-large: 52px;
+@input-height-small: 32px;
+@input-padding-base: 6px 10px;
+@input-color-focus: #000;
+@input-color-placeholder: #999;
+@input-bg-base: #F0F2F7;
+@input-border-color: @border-color-base;
+@input-radius-base: @border-radius-base;
+
+/* Button */
+@btn-height-base: 40px;
+@btn-height-large: 48px;
+@btn-height-xsmall: 20px;
+@btn-height-small: @input-height-small;
+@btn-radius-base: 0;//@btn-height-base / 2;
+@btn-radius-large: 0;//@btn-height-large / 2;
+
+// Pagination
+@pagination-color:                     @text-color;
+@pagination-bg:                        #fff;
+@pagination-border: @border-color-base;
+
+@pagination-hover-color:               #fff;
+@pagination-hover-bg:                  transparent;
+@pagination-hover-border: @pagination-border;
+
+@pagination-active-color:              #fff;
+@pagination-active-bg:                 transparent;
+@pagination-active-border: @pagination-border;
+
+@pagination-disabled-color:           transparent;
+@pagination-disabled-bg:               #fff;
+@pagination-disabled-border: @pagination-border;
+
+// Modals
+@modal-inner-padding: 20px;
+@modal-title-line-height: @line-height-base;
+@modal-content-bg: #fff;
+@modal-content-border-color: none;
+// Modal content border color **for IE8**
+@modal-content-fallback-border-color: #999;
+@modal-backdrop-bg: #000;
+@modal-backdrop-opacity: .4;
+@modal-header-border-color: @border-color-base;
+@modal-footer-border-color:   @modal-header-border-color;
+@modal-radius: 0;
+@modal-xlg:                   1200px;
+@modal-lg:                    900px;
+@modal-md:                    600px;
+@modal-sm:                    360px;
+
+// table
+@table-cell-padding: 16px 20px;

@@ -1,0 +1,105 @@
+
+/* header */
+header{.rel;.h(@gnb-height);.bgimg('bg-header.jpg',50%,0);.tc;.z(@z-navbar)}
+nav{.content-wrap;.ptb(40px)}
+.navbar-brand{.fl;
+	.brand-image{.block;.w(162px);.h(26px);.text-hidden;.bgimg('logo.png',50%,50%);.bgs}
+}
+.nav-gnb{.in-block;.rel;.mt(-3px);
+	> li{.fl;.mrl(16px);.pt(8px);
+		> a{.block;.tc;.fs(16);.c(#fff)}
+	}
+}
+.nav-account{.fr}
+.nav-gnb,.nav-account{
+	> li{.rel;.pb(20px);
+		&:hover{
+			ul{.block}
+		}
+	}
+	ul{.hidden;.abs;top:100%;left:0;min-width:140px;.radius;.bgw;.z(100);
+		> li{
+			&:first-child{
+				a{.radius-top}
+			}
+			&:last-child{
+				a{.radius-bottom}
+			}
+			> a{.block;.p(8px 16px);.fs(13);.tl;.c(#333);
+				&:hover{.bg(#F0F2F7)}
+			}
+		}
+	}
+}
+
+/* Footer */
+footer{.ptb(80px);.bt;
+    > div{.overh;
+        > dl{.rel;.pl(88px);
+        	&:before{content:'';.block;.abs;top:50%;left:0;.w(1px);.h(40px);.mt(-20px);.bg(#eee)}
+        	&:not(:last-child){.fl}
+        	&:first-child{
+        		dd{.fs(28);.montserrat;.bold}
+        		&:before{.w(3px);.bg(#000)}
+        	}
+        	&:nth-child(2){.ml(88px)}
+        	&:last-child{.fr}
+        	dt{.c(#666)}
+        	dd{.mt(8px)}
+        }
+    }
+    p{.mt(80px);.fs(12);.tc;.montserrat}
+}
+
+/* Sidebar */
+.sidebar{.fl;.w(160px);.bt;
+	li{.bb;
+		a{.block;.ptb(24px);.fs(16);.c(#666);
+			&.selected{.bgimg('ico-arrow-right.png',100%,50%);.bold;.c(#000)}
+		}
+	}
+}
+.page-analysis-date{
+	.sidebar{.w(280px);.bnone}
+}
+
+/* step */
+.nav-step{.mb(80px);.tc;
+	ol{.dp-table;.mrl(auto);
+		li{.boxsize;.rel;.w(170px);.pt(32px);.fs(13);.c(#333);
+		    &:before{content:'';.abs;top:-4px;left:0;right:0;height:2px;.bg(#ddd);.z(1)}//가로선
+			span{content:'';.abs;top:-26px;left:50%;width:42px;height:42px;margin-left:-21px;.radius-oval;.b(#ddd,2px);.bgw;.lh(42px);.tc;.fs(13);.montserrat;.z(10)}//점
+			a,div{.block}//text
+			&.disabled{
+				a{cursor:default}
+			}
+			&.done{
+				span{.b(@green,2px);.bg(@green);.bgimg('ico-step-check.png',50%,50%);.text-hidden}
+			}
+			&.selected{
+				span{.b(@green,2px)}
+				// a,div{
+				// 	&:after{content:'';.abs;top:0;left:50%;width:26px;height:26px;.ml(-13px);.radius-oval;.bg(@green);.z(5)}//큰 점
+				// }
+			}
+			&:first-child:before{left:50%}//처음, 마지막 가로선 반만 생성
+			&:last-child:before{right:50%}
+			// p:before{content:'';.abs;top:12px;left:50%;right:0;height:1px}
+			// &:last-child p:before{.bgnone !important}
+		}
+	}
+}
+// .nav-step.step1 ul li:nth-child(1):before,
+// .nav-step.step2 ul li:nth-child(-n+2):before,
+// .nav-step.step3 ul li:nth-child(-n+3):before,
+// .nav-step.step1-ing ul li:nth-child(1):before,
+// .nav-step.step2-ing ul li:nth-child(-n+2):before,
+// .nav-step.step3-ing ul li:nth-child(-n+3):before,
+// .nav-step.step1 ul li:nth-child(1) span,
+// .nav-step.step2 ul li:nth-child(-n+2) span,
+// .nav-step.step3 ul li:nth-child(-n+3) span,
+// .nav-step.step1-ing ul li:nth-child(1) span,
+// .nav-step.step2-ing ul li:nth-child(-n+2) span,
+// .nav-step.step3-ing ul li:nth-child(-n+3) span{.bg(@green);.l(20px)}//활성 상태
+// .nav-step.step2 ul li:nth-child(2) p:before,
+// .nav-step.step3 ul li:nth-child(3) p:before{.bg(@gray-400);.l}

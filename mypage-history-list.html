@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="robots" content="ALL">
+<meta name="googlebot" content="ALL">
+<meta name="description" content="데이터 융합으로 만들어가는 데이터 생태계 중심에 제주 빅데이터센터가 있습니다.">
+<meta name="keywords" content="제주빅데이터센터">
+<meta name="apple-mobile-web-app-title" content="제주빅데이터센터">
+<meta name="viewport" content="width=1280">
+<title>데이터 반출 내역 &#58; 제주빅데이터센터</title>
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/style.js"></script>
+<!--datepicker-->
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/moment.min.js"></script>
+<script>
+$( document ).ready( function(){
+	datepicker();
+});
+</script>
+<!--//datepicker-->
+</head>
+
+<body class="page-mypage-history">
+<a href="#container">콘텐츠 바로가기</a>
+<div id="top"></div>
+
+<header>
+	<nav></nav>
+	<h1 class="page-title"><span>마이페이지</span></h1>
+</header>
+
+<div id="container">
+	<div class="content-wrap">
+		<ul class="sidebar">
+			<li><a href="mypage-account.html">개인 정보 수정</a></li>
+			<li><a href="mypage-reservation-list.html">예약 관리</a></li>
+			<li><a href="mypage-history-list.html" class="selected">데이터 반출 내역</a></li>
+		</ul>
+		<div class="contents">
+			<div class="contents-header">
+				<h1 class="contents-title">데이터 반출 내역</h1>
+				<form class="search-board">
+					<button type="button" class="btn btn-h42 btn-outline">오늘</button>
+					<button type="button" class="btn btn-h42 btn-outline">1주일</button>
+					<button type="button" class="btn btn-h42 btn-outline">1개월</button>
+					<button type="button" class="btn btn-h42 btn-outline">3개월</button>
+					<input type="text" value="2019-11-24" class="i-date" title="시작일">
+					<input type="text" value="2019-12-23" class="i-date" title="종료일">
+					<button type="submit" class="btn btn-h42 btn-fill-blue">검색</button>
+				</form><!--//search-board-->
+			</div>
+			<div class="list-board">
+				<ul class="board-header">
+					<li class="cell-number">번호</li>
+					<li class="cell-subject">제목</li>
+					<li class="cell-date">신청일</li>
+					<li class="cell-count">총 신청</li>
+					<li class="cell-count">승인</li>
+					<li class="cell-count">반려</li>
+					<li class="cell-count">미확인</li>
+				</ul>
+				<ol class="board-article">
+					<li>
+						<span class="cell-number">2,050</span>
+						<a href="mypage-history-view.html" class="cell-subject">데이터 데이터 데이터 데이터 데이터 데이터 데이터</a>
+						<span class="cell-date">2019.05.31</span>
+						<span class="cell-count">200</span>
+						<span class="cell-count">20</span>
+						<span class="cell-count">10</span>
+						<span class="cell-count">5</span>
+					</li>
+					<li>
+						<span class="cell-number">2,050</span>
+						<a href="mypage-history-view.html" class="cell-subject">데이터</a>
+						<span class="cell-date">2019.05.31</span>
+						<span class="cell-count">200</span>
+						<span class="cell-count">20</span>
+						<span class="cell-count">10</span>
+						<span class="cell-count">5</span>
+					</li>
+				</ol>
+			</div><!--//list-board-->
+			<div class="pagination">
+				<ul>
+					<li class="prev"><a href="">이전</a></li>
+					<li class="selected"><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="">4</a></li>
+					<li><a href="">5</a></li>
+					<li><a href="">6</a></li>
+					<li><a href="">7</a></li>
+					<li class="next"><a href="">다음</a></li>
+				</ul>
+			</div><!--//pagination-->
+		</div><!--//contents-->
+	</div><!--//content-wrap-->
+</div><!--//container-->
+
+<footer></footer>
+
+</body>
+</html>

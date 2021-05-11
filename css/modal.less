@@ -1,0 +1,84 @@
+
+/* Modals */
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+.modal-open{overflow:hidden}
+.modal{display:none;overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;z-index:@zindex-modal;//opacity:0;
+	outline:0;// Prevent Chrome on Windows from adding a focus outline.
+	@media @moretablet{-webkit-overflow-scrolling:touch}
+	// When fading in the modal, animate it to slide down
+	&.fade .modal-dialog{visibility:hidden;.opacity(0);transition:visibility .6s,opacity .6s/*;.transition-transform(~"0.3s ease-out")*/}
+	&.in .modal-dialog{visibility:visible;.opacity(1)}
+}
+.modal-open .modal{overflow-x:hidden;overflow-y:auto}
+.modal-dialog{position:relative;width:auto;margin:auto}
+.modal-dialog-centered{display:flex;align-items:center;min-height:100%;
+	// Ensure `modal-dialog-centered` extends the full height of the view (IE10/11)
+	&::before{display:block;// IE10
+	height:100vh;content: "";}
+	// Ensure `.modal-body` shows scrollbar (IE10/11)
+	&.modal-dialog-scrollable{flex-direction:column;justify-content:center;height:100%;
+		.modal-content{max-height:none}	
+		&::before{ content:none}
+	}
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @zindex-modal-background;
+	background-color: @modal-backdrop-bg;
+	// Fade for backdrop
+	&.fade { .opacity(0); }
+	&.in { .opacity(@modal-backdrop-opacity); }
+}
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+.modal-content{.rel;.w-full;.radius;background-color:@modal-content-bg;.box-shadow(10px,15px,15px,rgba(0,0,0,.2));
+	outline:0;// Remove focus outline from opened modal
+}
+.modal-header{.rel;.z(1);
+	&:extend(.clearfix all);
+	.close{.btn;.abs;top:18px;right:20px;.w(10px);.h(10px);.bgimg('ico-modal-close.png');.text-hidden}
+	&.modal-title{.h(48px);.bb;
+		h3{.mrl(50px,20px);.fs(16);.lh(48px);.bold}
+	}
+}
+.modal-body{.rel}//;.m(@modal-inner-padding)}
+.modal-footer{//.p(0 @modal-inner-padding @modal-inner-padding);.tc;
+	&:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+	button{min-width:96px;.mrl(4px)}
+}
+
+.modal-default{.w(@modal-sm);min-height:300px;
+	.modal-body,.modal-footer{.tc}
+	.modal-title + .modal-body{.p(@modal-inner-padding @modal-inner-padding @modal-inner-padding / 2)}
+	.modal-body{.p(@modal-inner-padding * 1.5 @modal-inner-padding @modal-inner-padding / 2);
+		h3{.fs(16);.bold;.c(#000)}
+		p{.mt(4px);.c(#666)}
+		input{.w-full}
+	}
+	.modal-footer{.p(@modal-inner-padding / 2 @modal-inner-padding @modal-inner-padding * 1.2)}
+}
+.modal-reservation-extend{.w(1070px);
+	.modal-body{.overh;.p(24px 20px);
+		.form{.fl;.w(240px);
+			.checkbox-container{.mtb(20px)}
+			textarea{.h(60px)}
+		}
+		.calendar-wrap{.fr;.w(770px);
+			.calendar{.fl}
+			.calendar-header{.mb(16px)}
+		}
+	}
+}

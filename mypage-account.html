@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="robots" content="ALL">
+<meta name="googlebot" content="ALL">
+<meta name="description" content="데이터 융합으로 만들어가는 데이터 생태계 중심에 제주 빅데이터센터가 있습니다.">
+<meta name="keywords" content="제주빅데이터센터">
+<meta name="apple-mobile-web-app-title" content="제주빅데이터센터">
+<meta name="viewport" content="width=1280">
+<title>개인 정보 수정 &#58; 제주빅데이터센터</title>
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/style.js"></script>
+<!--datepicker-->
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/moment.min.js"></script>
+<script>
+$( document ).ready( function(){
+	datepicker();
+});
+</script>
+<!--//datepicker-->
+</head>
+
+<body class="page-mypage-account">
+<a href="#container">콘텐츠 바로가기</a>
+<div id="top"></div>
+
+<header>
+	<nav></nav>
+	<h1 class="page-title"><span>마이페이지</span></h1>
+</header>
+
+<div id="container">
+	<div class="content-wrap">
+		<ul class="sidebar">
+			<li><a href="mypage-info.html" class="selected">개인 정보 수정</a></li>
+			<li><a href="mypage-reservation-list.html">예약 관리</a></li>
+			<li><a href="mypage-history-list.html">데이터 반출 내역</a></li>
+		</ul>
+		<div class="contents">
+			<div class="contents-header">
+				<h1 class="contents-title">개인 정보 수정</h1>
+			</div>
+			<form class="form">
+				<div class="i-vertical">
+					<label for="user-name">이름</label>
+					<input type="text" id="user-name">
+				</div>
+				<div class="i-vertical">
+					<label>성별</label>
+					<div class="i-group">
+						<input type="radio" id="user-gender-male" name="user-gender">
+						<label for="user-gender-male">남자</label>
+						<input type="radio" id="user-gender-female" name="user-gender">
+						<label for="user-gender-female">여자</label>
+					</div>
+				</div>
+				<div class="i-vertical">
+					<label for="user-birthday">생년월일</label>
+					<input type="text" id="user-birthday" class="i-birthday">
+				</div>
+				<div class="i-vertical">
+					<label for="user-phone">휴대전화 번호</label>
+					<input type="tel" id="user-phone">
+				</div>
+				<div class="i-vertical">
+					<label for="user-company">소속 기관 (선택)</label>
+					<input type="text" id="user-company">
+				</div>
+				<div class="i-vertical">
+					<label for="user-company-phone">소속 기관 전화번호 (선택)</label>
+					<input type="tel" id="user-company-phone">
+				</div>
+			</form><!--//form-account-->
+			<div class="contents-footer">
+				<a data-toggle="modal" data-target="#modal-remove-account" class="btn btn-h52 btn-radius btn-outline w200">탈퇴 신청</a>
+				<button type="submit" class="btn btn-h52 btn-radius btn-fill-blue w200">저장</button>
+			</div>
+		</div><!--//contents-->
+	</div><!--//content-wrap-->
+</div><!--//container-->
+
+<footer></footer>
+
+<!--Modal > 탈퇴 신청-->
+<div class="modal fade" id="modal-remove-account" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-default" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">닫기</button>
+            </div>
+            <div class="modal-body">
+				<h3>빅데이터센터를 탈퇴하시겠습니까?</h3>
+				<p>저장된 개인정보는 삭제되며 데이터 사용이력은 영구 저장됩니다.</p>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" data-dismiss="modal" class="btn btn-h42 btn-radius btn-outline">취소</button>
+            	<button type="submit" data-dismiss="modal" class="btn btn-h42 btn-radius btn-fill-blue">탈퇴</button>
+            </div>
+        </div><!--//modal-content-->
+    </div><!--//modal-dialog-->
+</div><!--//modal-->
+
+</body>
+</html>

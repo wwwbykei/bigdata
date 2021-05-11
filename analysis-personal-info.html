@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="robots" content="ALL">
+<meta name="googlebot" content="ALL">
+<meta name="description" content="데이터 융합으로 만들어가는 데이터 생태계 중심에 제주 빅데이터센터가 있습니다.">
+<meta name="keywords" content="제주빅데이터센터">
+<meta name="apple-mobile-web-app-title" content="제주빅데이터센터">
+<meta name="viewport" content="width=1280">
+<title>분석실예약 &#58; 제주빅데이터센터</title>
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/style.js"></script>
+<!--datepicker-->
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/moment.min.js"></script>
+<script>
+$( document ).ready( function(){
+	datepicker();
+});
+</script>
+<!--//datepicker-->
+</head>
+
+<body class="page-analysis">
+<a href="#container">콘텐츠 바로가기</a>
+<div id="top"></div>
+
+<header>
+	<nav></nav>
+	<h1 class="page-title"><span>분석실예약</span></h1>
+</header>
+
+<div id="container">
+	<div class="content-wrap">
+		
+		<div class="nav-step step2">
+	        <ol>
+	            <li class="done"><a><span>1</span><p>개인정보 및 연구결과 이용동의</p></a></li>
+	            <li class="selected"><a><span>2</span><p>신청자 정보 입력</p></a></li>
+	            <li><a><span>3</span><p>연구계획 입력</p></a></li>
+	        </ol>
+	    </div>
+		<form class="form box-shadow">
+			<div class="i-vertical">
+				<label for="user-name">이름</label>
+				<input type="text" id="user-name">
+			</div>
+			<div class="i-vertical">
+				<label>성별</label>
+				<div class="i-group">
+					<input type="radio" id="user-gender-male" name="user-gender">
+					<label for="user-gender-male">남자</label>
+					<input type="radio" id="user-gender-female" name="user-gender">
+					<label for="user-gender-female">여자</label>
+				</div>
+			</div>
+			<div class="i-vertical">
+				<label for="user-birthday">생년월일</label>
+				<input type="text" id="user-birthday" class="i-birthday">
+			</div>
+			<div class="i-vertical">
+				<label for="user-phone">휴대전화 번호</label>
+				<input type="tel" id="user-phone">
+			</div>
+			<div class="i-vertical">
+				<label for="user-company">소속 기관 (선택)</label>
+				<input type="text" id="user-company">
+			</div>
+			<div class="i-vertical">
+				<label for="user-company-phone">소속 기관 전화번호 (선택)</label>
+				<input type="tel" id="user-company-phone">
+			</div>
+		</form><!--//form-account-->
+		<div class="contents-footer">
+			<a href="analysis-agreement.html" class="btn btn-h52 btn-radius btn-outline w200">이전</a>
+			<a href="analysis-plan.html" class="btn btn-h52 btn-radius btn-fill-blue w200">다음</a>
+		</div>
+			
+	</div><!--//content-wrap-->
+</div><!--//container-->
+
+<footer></footer>
+
+</body>
+</html>

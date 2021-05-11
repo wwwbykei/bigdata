@@ -1,0 +1,14 @@
+
+/* Pagination */
+.pagination{.overh;.mt(32px);.tc;
+	ul{.in-block;.br;.bb;.radius}
+	li{.block;.fl;.w(42px);.h(42px);.bt;.bl;
+		&.selected{.bg(#333);.c(#fff)}
+		&:first-child{.radius-left}
+		&:last-child{.radius-right}
+	}
+	a{.block;.lh(42px);.montserrat}
+	.prev,.next{.text-hidden}
+	.prev{.bgimg('ico-page-prev.png',50%,50%)}
+	.next{.bgimg('ico-page-next.png',50%,50%)}
+}

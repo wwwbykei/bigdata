@@ -1,0 +1,93 @@
+
+/* Form */
+input[type=text],input[type=password],input[type=search],input[type=number],input[type=email],input[type=tel],input[type=file],input[type=date],select,textarea{.boxsize;.p(@input-padding-base);.b(#eee);.radius(@input-radius-base);
+	&:focus{.bnone;.bgw;.c(@input-color-focus);.box-shadow(0,5px,10px)}
+}
+input[type=text],input[type=password],input[type=search],input[type=number],input[type=email],input[type=tel],input[type=date],select,textarea{.bg(@input-bg-base)}
+input[type=text],input[type=password],input[type=search],input[type=number],input[type=email],input[type=tel],input[type=date],select{height:@input-height-base;.valign}
+input[type=checkbox],input[type=radio]{.in-block;.mr(8px)}
+input[type=password]{-webkit-text-security:disc}
+input[type=file]{.ptb(11px);.lh(normal)}
+input[type=date],.i-date,.i-birthday{.bgimg('ico-calendar.png',right 10px,top 50%)}
+textarea{resize:none;.p(@input-padding-base) !important}
+select{.p(6px 40px 6px 10px) !important;.b(@input-border-color) !important;.radius(@input-radius-base) !important;.bgw !important;.bgimg('ico-arrow-down.png',right 10px,top 50%) !important}
+
+/*@radio-size:22px;
+.radio-container{.block;.rel;.pl(@radio-size + 6px);.pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+	@media @moretablet{.pl(@radio-size + 12px)}
+	input{.abs;.pointer;.opacity(0);
+		&:checked ~ .checkmark:after{.block}
+	}
+	.checkmark{.boxsize;.abs;top:0;left:0;.w(@radio-size);.h(@radio-size);.b(@sky-blue);.radius-oval;.bgw;
+		&:after{.center-abs(@radio-size - 10px,@radio-size - 10px);content:'';.hidden;.radius-oval;.bg(@sky-blue)}
+	}
+	&:hover input ~ .checkmark{.b(@sky-blue,2px)}
+}*/
+@checkbox-size:22px;
+.checkbox-container{.block;.rel;.pl(@checkbox-size + 12px);.pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+	input{.abs;.pointer;.opacity(0);
+		&:checked ~ .checkmark{.bnone;.bg(@blue);
+			&:after{.block}
+		}
+	}
+	.checkmark{.boxsize;.abs;top:0;left:0;.w(@checkbox-size);.h(@checkbox-size);.b(#ccc);.radius;.bgw;
+		&:after{content:'';.hidden;.abs;top:50%;left:50%;.w(5px);.h(10px);.mt(-8px);.ml(-4px);border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+	}
+	&:hover input ~ .checkmark{.b(@blue,2px)}
+}
+.placeholder(@color: @input-color-placeholder){  
+	&::-moz-placeholder{color:@color;opacity: 1}
+	&:-ms-input-placeholder{color:@color}
+	&::-webkit-input-placeholder{color:@color}
+}
+.placeholder{.placeholder()}
+
+.i-group{
+	input[type=radio],input[type=checkbox]{
+		&:not(:first-child){.ml(20px)}
+	}
+}
+.i-vertical{
+	> label{.block;.mb(4px);.fs(12);.c(#333)}
+}
+.search-board{.mb(24px);.tr;
+	input,button[type=submit]{.ml(4px)}
+	input[type=text],input[type=search]{.w(240px)}
+	.i-date{.w(140px) !important}
+}
+
+.form{
+	> div,> textarea,> a{
+		&:not(:first-child){.mt(20px)}
+	}
+	input[type=text],input[type=password],input[type=search],input[type=number],input[type=email],input[type=tel],input[type=file],input[type=date],textarea{.w-full}
+	&.box-shadow{.box-shadow;.radius}
+}
+.page-mypage-account{
+	.form{.p(40px 190px);.bt(#000);.bb}
+}
+.page-analysis{
+	.sidebar{.w(280px);.bnone;
+		.form{.p(20px);
+			.i-group{.rel;
+				label{
+					span{.abs;right:0;.c(#999)}
+				}
+			}
+			textarea{.h(100px)}
+		}
+	}
+	.nav-step.step2 + .form{
+		> div{.tc;
+			&:not(:first-child){.mt(80px)}
+			> h3{.mb(24px);.tl;.fs(16);.bold}
+			.text-scroll{.tl}
+			.checkbox-container{.in-block;.mt(24px)}
+		}
+	}
+	.nav-step.step2 + .form + div{.mtb(40px);.pt(40px);.bt;.tc;
+		.checkbox-container{.in-block;.fs(16);.bold}
+	}
+	.nav-step.step3 + .form{.mb(40px);.p(40px 320px 80px)}
+	.nav-step.step4 + .form{.mb(40px);.p(40px 120px 80px)}
+}

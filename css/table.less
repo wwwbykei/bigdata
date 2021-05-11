@@ -1,0 +1,59 @@
+
+/* Tables */
+.table{width:100%;max-width:100%;
+	tr{
+		> th,> td{.p(@table-cell-padding)}
+	}
+}
+.table-stripe{.bt;
+	th,td{.p(8px);.bb}
+}
+.calendar-wrap{.rel;
+	.contents-title{.mr(24px);.fs(16);.normal}
+	> .btn-group{
+		button{.mrl(2px)}
+	}
+	> .bu-dot{.bu-dot;.abs;top:5px;right:0;
+		> li{.fl;.fs(12);.c(#666);
+			&:not(:first-child){.ml(32px)}
+		}
+	}
+}
+.calendar{.clear;.mt(12px);.b;.radius;
+	.calendar-header{.rel;.m(20px 20px 28px);
+		h3{.tc;.fs(20);.montserrat;.bold}
+		.btn-group{.abs;top:0;right:0;
+			button{.btn-outline;.block;.fl;.w(44px);.h(32px);.radius(0);.text-hidden;
+				&.prev{.radius-left(16px);.bgimg('ico-page-prev.png',50%,50%)}
+				&.next{.blnone;.radius-right(16px);.bgimg('ico-page-next.png',50%,50%)}
+			}
+		}
+	}
+	> table{.table;.mt(20px);
+		th,td{.w(123px);.tr}
+		td{.valign(top);.montserrat}
+		> thead{
+			th{.normal;.c(#999)}
+		}
+		> tbody{
+			> tr{
+				> td{.bt;
+					&:not(:first-child){.bl}
+					&:first-child,&:last-child,&.past,&.holiday{
+						> span,.bu-dot{.opacity(.4)}
+					}
+					&:first-child,&:last-child,&.holiday{.c(@red)}
+					&.today{.bg(#F0F2F7);
+						> span{.bold}
+					}
+					> span{.upper}
+				}
+			}
+		}
+	}
+	.bu-dot{.bu-dot;.tl;
+		> li{.mt(4px);.fs(12);.c(#666);
+			&:not(:first-child){}
+		}
+	}
+}
